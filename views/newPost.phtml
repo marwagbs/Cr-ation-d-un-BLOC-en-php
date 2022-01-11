@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
+<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="Interiart - Le design de votre intérieur à la carte par un décorateur pro">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Blog</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+		<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        
+    </header>
+    
+    <main>
+
+<form action="" method="POST">
+     <fieldset>
+     <legend>Remplissez les champs</legend>
+    <div>
+        <label for="title">Titre :</label>
+        <input type="text" id="title" name="title">
+    </div>
+    <div>
+        <label for="author">Auteur :</label>
+        <select name="author">
+               <?php foreach($authors as $element):?>
+                    <option value="author"></option>
+                    <option value=<?= $element["id"];?>><?= $element["firstname"];?></option>
+               <?php
+              endforeach;
+            ?>     
+               </select> 
+    </div>
+    <div>
+         <label>Categorie :</label>
+               <select name="category">
+               <?php foreach($categories as $element):?>
+                    <option value=Categories></option>
+                    <option value=<?= $element["id"];?>><?= $element["name"];?></option>
+               <?php
+              endforeach;
+            ?>     
+               </select> 
+          
+    </div>
+    <br>
+    <div>
+        <label for="content"> Contenu :</label>
+        <textarea id="content" name="content"></textarea>
+    </div>
+    
+    <div>
+     <label for="">Date :</label> 
+     <input type="date" name="date" id="date" value="" />
+     </div>
+     
+     <div class="button">
+        <button type="submit">Ajouter</button>
+    </div>
+     </fieldset>
+</form>
+</main>
+
+<footer>
+     
+</footer>
+</body>
+</html>
+
+

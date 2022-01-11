@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="Interiart - Le design de votre intérieur à la carte par un décorateur pro">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Blog</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+		<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        
+    </header>
+    
+    <main>
+        <div id="display" class = "container creative_taital">
+            <h1><span>Bienvenue sur le blog de la 3WA</span></h1>
+        <nav>
+            <ul> 
+            <li><a href="authentification-author.php">S'identifier </a> </li>
+            <li><a href="subscription-author.php">  S'inscrire</a></li>
+            
+        </ul>
+        
+        </nav>
+        <buttton class="button-nomber" id="article-count">Nombre d'article</buttton>
+              <!--PARCOURIR LE TABLEAU $posts -->
+             <?php
+              foreach($posts as $element):?>
+            
+           <a href="content.php?title=<?= $element["title"]; ?>"><h2><?= $element["title"]; ?></h2></a>
+                
+            <p ><?= substr($element['content'],0, 100). "&hellip;" 
+            ?></p>
+              
+            <div class = "cadran">
+                <p><span>Auteur :</span> <?= $element["firstname"]; ?></p>
+              
+                <a href="category.php?id=<?= $element["category"]; ?>"><buttton>Catégorie : <?= $element["name"]; ?></buttton></a> 
+              
+                <p><span>Date de publication</span> : <?= $element["date"]; ?></p>
+              
+            </div>
+              <a href="delete.php?id=<?= $element["postID"]; ?>"><button>Supprimer</button></a>
+            <?php
+              endforeach;
+            ?>
+        </div>
+        <div class="container">
+        <buttton class="button-nomber" id="next">Charger plus d'articles</buttton>
+        
+        </div>
+         
+    </main>
+    
+    <footer>
+        
+    </footer>
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+    <script src="js/home.js"></script>
+</body>
+</html>
+
